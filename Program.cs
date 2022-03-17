@@ -22,15 +22,31 @@
 
 //int[] list = { 2, 3, 4, 4, 5, 5, 5 };
 
-int[] list = day02.Arrays.CreateRandomArray();
-day02.Arrays.DisplayArrayNumber(list);
+/*int[] list = day02.Arrays.CreateRandomArray();
+day02.Arrays.DisplayArrayNumber(list);*/
 //day02.Arrays.SumElement(list);
-int max = day02.Arrays.FindMaxNumber(list); 
+/*int max = day02.Arrays.FindMaxNumber(list); 
 int indexMax = day02.Arrays.FindIndexMaxNumber(list);
 Console.WriteLine($"\nMax number : {max}");
-Console.WriteLine($"\nMax number position at: {indexMax}");
+Console.WriteLine($"\nMax number position at: {indexMax}");*/
 
-day02.Arrays.CopyArray(list);
+//day02.Arrays.CopyArray(list);
+
+day03.Array2D.InitMatrix();
+
+int[,] matrix2 =
+            {
+                {1, 2, 3, 4, 5},
+                {11, 12, 13, 14, 15},
+                {21, 22, 23, 24, 25},
+                {31, 32, 33, 34, 35},
+                {41, 42, 43, 44, 45}
+            };
+
+int sum = day03.Array2D.SumMatrix(matrix2);
+Console.WriteLine($"Total Sum : {sum}");
+
+day03.Array2D.DisplayMatrix(day03.Array2D.RandomMatrix());
 
 Console.ReadLine();
 
