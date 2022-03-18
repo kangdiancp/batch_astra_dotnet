@@ -32,7 +32,7 @@ Console.WriteLine($"\nMax number position at: {indexMax}");*/
 
 //day02.Arrays.CopyArray(list);
 
-day03.Array2D.InitMatrix();
+/*day03.Array2D.InitMatrix();
 
 int[,] matrix2 =
             {
@@ -46,7 +46,9 @@ int[,] matrix2 =
 int sum = day03.Array2D.SumMatrix(matrix2);
 Console.WriteLine($"Total Sum : {sum}");
 
-day03.Array2D.DisplayMatrix(day03.Array2D.RandomMatrix());
+day03.Array2D.DisplayMatrix(day03.Array2D.RandomMatrix());*/
+
+day04.Collections.InitHashSet();
 
 Console.ReadLine();
 
