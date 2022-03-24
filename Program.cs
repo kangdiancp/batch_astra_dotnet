@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using day08;
+
 //call other class
 
 //day01.ConsoleIntro.ShowMultiConsole();
@@ -52,35 +54,36 @@ day03.Array2D.DisplayMatrix(day03.Array2D.RandomMatrix());*/
 
 //----------------- quiz day04 -------//
 
-day04.Quiz.Soal01(new List<int> { 1, 2, 5, 6, 9 }, new List<int> { 1, 2, 3, 4 });
+/*day04.Quiz.Soal01(new List<int> { 1, 2, 5, 6, 9 }, new List<int> { 1, 2, 3, 4 });
 
 
 List<int> c = new List<int> { 1, 2, 3, 4 };
-List<int> s02 = day04.Quiz.Soal02(ref c);
+List<int> s02 = day04.Quiz.Soal02(ref c);*/
 //day04.Quiz.DisplayList(ref s02);
 
-List<string> str1 = new List<string> { "code", "bootcamp", "id", "net" };
+/*List<string> str1 = new List<string> { "code", "bootcamp", "id", "net" };
 List<string> s03 = day04.Quiz.Soal02(ref str1);
-Console.WriteLine();
+Console.WriteLine();*/
 //day04.Quiz.DisplayList(ref s03);
 
 //soal 2
-Dictionary<int,int> numbers1 = day04.Quiz.Soal06(new List<int>(){1,1,1,2,2,2,3,3,3,3,3});
+//Dictionary<int,int> numbers1 = day04.Quiz.Soal06(new List<int>(){1,1,1,2,2,2,3,3,3,3,3});
 //day04.Quiz.DisplayDictionary(numbers1);
 
 
 
 //soal04
-List<int> e = new List<int> { 7, 2, 7, 1, 2, 5, 7, 1 };
+/*List<int> e = new List<int> { 7, 2, 7, 1, 2, 5, 7, 1 };
 List<int> soal4 = day04.Quiz.Soal04(ref e);
 day04.Quiz.DisplayList(ref soal4);
-Console.WriteLine();
+Console.WriteLine()*/
+;
 //soal05
-List<string> arr1 = new List<string> { "Mangga", "Apel", "Melon", "Pisang", "Sirsak", "Tomat", "Nanas", "Nangka", "Timun", "Mangga" };
+/*List<string> arr1 = new List<string> { "Mangga", "Apel", "Melon", "Pisang", "Sirsak", "Tomat", "Nanas", "Nangka", "Timun", "Mangga" };
 List<string> arr2 = new List<string> { "Bayam", "Wortel", "Kangkung", "Mangga", "Tomat", "Kembang Kol", "Nangka", "Timun" };
-day04.Quiz.Soal05(arr1, arr2, out HashSet<string> same, out HashSet<string> different);
+day04.Quiz.Soal05(arr1, arr2, out HashSet<string> same, out HashSet<string> different);*/
 
-Console.Write("same : ");
+/*Console.Write("same : ");
 day04.Quiz.DisplayHashSet(ref same);
 Console.WriteLine();
 Console.Write("different : ");
@@ -88,8 +91,55 @@ day04.Quiz.DisplayHashSet(ref different);
 //soal 06
 var v6 = new List<int>() { 1, 1, 2, 2, 2, 3, 3, 4, 5, 6 };
 List<int> l6 = day04.Quiz.Soal03(ref v6);
-Console.WriteLine();
+Console.WriteLine();*/
 //day04.Quiz.DisplayList(ref l6);
+
+// ------------- OOP -----------------/
+
+// create new object employee instance
+/*Employee emp1 = new Employee();
+emp1.EmpId = 1;
+emp1.Name = "Agus";
+emp1.JoinDate = DateTime.Now;
+emp1.BasicSalary = 15_000_000;
+emp1.Role = "Manager";*/
+
+// constructor with params
+/*Employee emp2 = new Employee("Budi",6_000_000,new DateTime(2015,3,12),"Asisten");
+Employee emp3 = new Employee("Charlie", 5_500_000, new DateTime(2018, 3, 12), "Sales");
+Employee emp4 = new Employee("Dian", 4_500_000, new DateTime(2018, 3, 12), "Sales");*/
+// insert to list
+//List<Employee> listEmployee = new List<Employee>() { emp1, emp2, emp3, emp4};
+
+//var junior = listEmployee.FindAll(e => e.BasicSalary < 6_000_000);
+
+// object instance employee permanent
+/*Permanent emp5 = new Permanent("Herlis", 15_000_000, new DateTime(2019, 8, 11), "Net Developer");
+listEmployee.Add(emp5);*/
+
+/*Employee emp6 = new Permanent("Viona", 11_000_000, new DateTime(2019, 8, 11), "Mobile App Developer");
+listEmployee.Add(emp6);*/
+
+
+// polymorphism
+//Employee emply = emp5;
+
+// parent class employee can not be cast to childclass permanent
+//Permanent pm1 = (Permanent)emp2; // getting error
+// int i = (int)45M;
+
+/*Console.WriteLine(emp4.ToString());
+Console.WriteLine(emp6.ToString());
+
+var totalEmployee = Employee.totalEmployee;*/
+
+
+// call interface
+IEmployee empInf = new EmployeeImpl();
+
+List<Employee> empList = empInf.GetAll();
+
+var empFilter = empInf.FindEmployeeByRole(empList, "Developer");
 
 Console.ReadLine();
 
