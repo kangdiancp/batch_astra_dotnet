@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using day08;
+using Fundamental.day09;
 
 //call other class
 
@@ -135,11 +136,43 @@ var totalEmployee = Employee.totalEmployee;*/
 
 
 // call interface
-IEmployee empInf = new EmployeeImpl();
+/*IEmployee empInf = new EmployeeImpl();
 
 List<Employee> empList = empInf.GetAll();
 
 var empFilter = empInf.FindEmployeeByRole(empList, "Developer");
+*/
+
+//study case solution juragan mobil
+
+// create object angkot
+Angkot angkot1 = new Angkot("D1234UM", "2015", "ANGKOT", 4_500, 20);
+Angkot angkot2 = new Angkot("D1256UM", "2017", 4_500, 100);
+
+SUV suv1 = new SUV("D111UX", "2017", 500_000, 100_000);
+SUV suv2 = new SUV("D222UX", "2019", 600_000, 100_000);
+
+//declare interface
+ICar carInf = new CarImpl();
+
+var listCar = carInf.InitListCar(new Car[] { angkot1, angkot2, suv1, suv2 });
+
+//search by nomor polisi
+var myCar = carInf.FindCarByNomor(listCar, "D111UX");
+
+//search car by type
+var listAngkot = carInf.FindCarByType(listCar, EnumCar.ANGKOT);
+var listSuv = carInf.FindCarByType(listCar, EnumCar.SUV);
+
+//revenue
+var totalRevenueAngkot = carInf.TotalPendapatan(listCar, EnumCar.ANGKOT);
+var totalRevenueSuv = carInf.TotalPendapatan(listCar, EnumCar.SUV);
+var totalRevenueCar = carInf.TotalPendapatan(listCar, EnumCar.ALL_CAR);
+
+carInf.DisplayCar();
+
+/*Console.WriteLine(angkot1);
+Console.WriteLine(suv1);*/
 
 Console.ReadLine();
 
